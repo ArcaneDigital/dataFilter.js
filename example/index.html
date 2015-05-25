@@ -5,11 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dataFilter.css" />
-    <script src="dataFilter.js"></script>
+    <script src="dataFilter.min.js"></script>
     <script src="util.js"></script>
 </head>
     <body>
-    <h2>Movies - <span id='dataCount'></span></h2>
+    <h2>Movies</h2>
     <button class="filter" data-attr="rating" data-value="">All</button>
     <button class="filter" data-attr="rating" data-value="G">G</button>
     <button class="filter" data-attr="rating" data-value="PG">PG</button>
@@ -32,7 +32,6 @@
     dataFilter.init({
         // filterclass: 'filter',
         // dataParent: 'dataParent',
-        // dataCount: 'dataCount',
         // sortAttr: 'data-sort'
     });
 </script>        
