@@ -1,6 +1,6 @@
 {
   "name": "dataFilter.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Filter and sort elements using data attributes",
   "main": "dataFilter.min.js",
 
