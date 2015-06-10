@@ -1,4 +1,5 @@
 'use strict';
+Number.isFinite = Number.isFinite || function(value) {return typeof value === "number" && isFinite(value);}
 var dataFilter = {
 	init: function(options){
 		var options = options || {};
@@ -58,7 +59,17 @@ var dataFilter = {
 	},
 	sortElements: function(){
 		window.filterView.sort(function sortfunction(a, b){
-		    return (b.getAttribute(dataFilter.options.sortAttr) - a.getAttribute(dataFilter.options.sortAttr) );
+			var aVal = a.getAttribute(dataFilter.options.sortAttr) || a.innerHTML.toLowerCase();
+			var bVal = b.getAttribute(dataFilter.options.sortAttr) || b.innerHTML.toLowerCase();
+			if(aVal.isFinite && bVal.isFinite) {
+				return (bVal - aVal);
+			}else {
+				return aVal > bVal ? 1 : -1;
+			}
+		    
 		});		
-	}
+	},
+
 };
+
+window.dataFilter = dataFilter;
