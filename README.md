@@ -1,7 +1,9 @@
 # dataFilter.js
 Filter and sort elements using data attributes
 
-## Examples
+## Example
+[Demo at JSFiddle](http://jsfiddle.net/jaygoodfellow/d7dcy751/)
+    
     dataFilter.init({
          filterclass: 'filter',
          dataParent: 'dataParent',
