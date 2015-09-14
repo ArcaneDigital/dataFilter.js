@@ -11,7 +11,16 @@ var dataFilter = {
 
 		var filterEls = Array.prototype.slice.call( document.getElementsByClassName(options.filterClass) );
 		filterEls.forEach(function(el){
-			el.addEventListener('click', dataFilter.eventFilter, false);
+		    switch(el.tagName) {
+		        case 'SELECT':
+		            var childEls = Array.prototype.slice.call(el.children);
+		            childEls.forEach(function(childEl){
+		              childEl.addEventListener('click', dataFilter.eventFilter, false);
+		            });
+		            break;
+		        default:
+		          el.addEventListener('click', dataFilter.eventFilter, false);
+		    }
 		});
 		dataFilter.options = options;
 		dataFilter.filterElements();
